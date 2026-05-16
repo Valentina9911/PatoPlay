@@ -1,6 +1,6 @@
-Wheel Of Doom Ducks
+Pato Play
 
-El Wheel of Dom surge a partir de la necesidad de crear un sistema aleatorio y justo de reconocimiento de coders. Con el fin de mejorar el ambiente laboral en la oficina.
+Se realiza desde la necesidad de escoger un personaje aleatorio para una tarea en especifico.
 
 METODOLOGIAS USADAS:
 
