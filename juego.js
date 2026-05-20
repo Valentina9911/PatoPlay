@@ -62,6 +62,15 @@ pause.addEventListener ('click', () =>{
 /*xx*/
 startGame.addEventListener("click", () => {
     console.log("Se oprimio el boton start")
+    console.log("Se oprimio el boton start")
+    if (jugadores === null || jugadores.length === 0) {
+        alert("⚠️ No hay jugadores registrados. Vuelve al inicio y agrega tus patos.")
+        return
+    }
+    if (jugadores.length < 2) {
+        alert("🦆 Necesitas mínimo 2 patos para iniciar la carrera.")
+        return
+    }
     if (jugadores.length == 0) {
         alert("Se acabaron los jugadores")
     }
