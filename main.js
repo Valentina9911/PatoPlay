@@ -55,30 +55,27 @@ function addDeleteBtn() {
     console.log("aaaaaaaaaaa")
 
     deleteBtn.addEventListener("click", (deleteBtn) => {
-        
-        
-        const item_ul = deleteBtn.target.parentElement;
-        console.log(item_ul)
-        let inner1 = item_ul.innerText
-        console.log(inner1)
-        let justName = inner1.replace("X","")
-        
-        let justNameNoSpace = justName.replace(/(\r\n|\r|\n)/g,"")
-        console.log(justNameNoSpace)
-        const item = ul
+    const item_ul = deleteBtn.target.parentElement;
+    const nombrePato = item_ul.querySelector("p").textContent;
 
-        const eliminar = jugadores2.indexOf(justNameNoSpace)
-        console.log(eliminar)
-        jugadores2.splice(eliminar, 1)
-        console.log(jugadores2)
+    const confirmar = confirm(`¿Seguro que quieres eliminar a "${nombrePato}" de la carrera? 🦆`);
+    
+    if (confirmar) {
+        let inner1 = item_ul.innerText;
+        let justName = inner1.replace("X", "");
+        let justNameNoSpace = justName.replace(/(\r\n|\r|\n)/g, "");
+        const eliminar = jugadores2.indexOf(justNameNoSpace);
+        jugadores2.splice(eliminar, 1);
         window.sessionStorage.setItem("items", JSON.stringify(jugadores2));
-        ul.removeChild(item_ul)
+        ul.removeChild(item_ul);
         actualizarContador();
-        const items = document.querySelectorAll("li")
+
+        const items = document.querySelectorAll("li");
         if (items.length == 0) {
             empty.style.display = "block";
         }
-    })
+    }
+})
     return deleteBtn
 }
 /*botones*/
