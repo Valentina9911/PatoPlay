@@ -39,10 +39,15 @@ addBtn.addEventListener("click", (e) => {
 
 
         input.value = "";
+        actualizarContador();
         empty.style.display = "none";
     }
 })
-
+function actualizarContador() {
+    const items = document.querySelectorAll("li");
+    const contador = document.getElementById("contador");
+    contador.textContent = `🦆 Patos registrados: ${items.length}`;
+}
 function addDeleteBtn() {
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "X"
@@ -68,6 +73,7 @@ function addDeleteBtn() {
         console.log(jugadores2)
         window.sessionStorage.setItem("items", JSON.stringify(jugadores2));
         ul.removeChild(item_ul)
+        actualizarContador();
         const items = document.querySelectorAll("li")
         if (items.length == 0) {
             empty.style.display = "block";
