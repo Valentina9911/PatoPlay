@@ -1,0 +1,481 @@
+*{
+    color: #000;
+}
+/*titulos*/
+h1, a{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 30px;
+    -webkit-text-fill-color: orangered;
+    -webkit-text-stroke: 1px black;
+    text-align: center;
+}
+body{
+    padding: 0;
+    margin: 0;
+    font-size: 30px;
+}
+.p1{
+    background-color: #F3F81F80; 
+}
+.cuerpo{
+    text-align: center;
+}
+/*sonidos*/
+.sound{
+    background-color: #ff9516;
+    border-radius: 20px;
+    width: 50vh;
+    height: auto;
+    cursor: pointer;
+}
+/*index*/
+.inicial{
+    font-size: 100px;
+}
+.fondo1{
+    background: url("/Imagenes\ Js1/fondo1.webp") center no-repeat;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    position: absolute;
+    z-index: 2;
+}
+.img_fondo {
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+#backgrd {
+    width: 1950px;
+    height: auto;
+}
+.titulo{
+    font-size: 30px;
+    text-align: center;
+}
+/*inicio*/
+
+.contexto{
+   /*  background-color: #F3F81F80; */
+    text-align: center;
+}
+.fondo2{
+    background: url("/Imagenes\ Js1/fondo1.webp") center no-repeat;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: auto;
+    position: absolute;
+    z-index: 2;
+}
+.img_fondo {
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+#backgrd {
+    width: 1950px;
+    height: auto;
+}
+.bottom{
+    font-size: 50px;
+    background-color:#F3F81F;
+}
+.ajuste{
+    background-color: transparent;
+    border-style: none;
+    cursor: pointer;
+}
+/*logo*/
+.logo{
+    width: 100px;
+    height: auto;
+    float: right;
+}
+/* /*botones*/
+.tuerca{
+    background-color: transparent;
+    border-style: none;
+    cursor: pointer;
+} 
+.reset{
+    background-color: transparent;
+    border-color: transparent;
+    cursor: pointer;
+}
+.boton{
+    font-size: 60px;
+    cursor: pointer;
+    background-color: white;
+    color: #000;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 15px;
+    border: 2px solid #000;
+}
+.play{
+    background-color: white;
+    color: #000;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 15px;
+    border: 2px solid #000;
+}
+.href{
+    cursor: pointer;
+    width: 50px;
+    height: 10px;
+}
+.text{
+    width: 300px;
+    padding: 15px 10px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+    font-size: large;
+    border: 2px solid #000;
+}
+.li-container{
+    width: 100%;
+    color: darkslategray;
+    margin-top: 20px;
+}
+.search{
+
+    display: block;
+}
+ul {
+    padding: 0;
+    background-color: transparent;
+    width: 350px;
+    border-radius: 20px 20px 20px 20px;
+    align-items: center;
+    text-align: center;
+    margin-left: auto; 
+    margin-right: auto;
+}
+li {
+    list-style: none;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 15px;
+    display: flex;
+    border-radius: 20px 20px 20px 20px;
+    border: 2px solid #000;
+    width: 350px;
+    
+}
+li p {
+    margin: 0;
+    padding: 15px;
+    width: 100%;
+}
+  
+.btn-delete {
+    margin-left: auto;
+    border: none;
+    background-color: #ff9516;
+    color: white;
+    font-weight: bold;
+    padding: 10px 10px 10px 10px;
+    outline: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 10%;
+    font-size: 1.2em;
+    border-radius: 0 20px 20px 0;
+}
+  
+.btn-delete:hover {
+    cursor: pointer;
+    background-color: red;
+}
+  
+.btn-add {
+    padding: 5px 15px;
+    border: none;
+    color: white;
+    font-family: fantasy;
+    background-color: #ff9516;
+    font-size: 1.4rem;
+    outline: none;
+    border-radius: 20px 20px 20px 0;
+}
+  
+.btn-add:hover {
+    cursor: pointer;
+    background-color: rgb(106, 163, 21);
+}
+  
+.empty {
+    color: darkslategrey;
+}
+.li-container ul{
+    
+    list-style: none;
+}
+/*ventana ajustes*/
+.window-notice {
+    background: rgba(33, 41, 52, .85);
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    display: flex;
+    position: fixed;
+    z-index: 999;
+}
+.window-notice .content {
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(33, 41, 52, .75);
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 200px;
+    min-width: 340px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 2rem;
+    font-size: 1.3rem;
+}
+.window-notice-hide {
+    display: none;
+}
+.cerrar{
+    color: black;
+    background-color: transparent;
+    border-color: red;
+    float: right;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+.cerrar:hover{
+    background-color: red;
+}
+/*juego*/
+.playing{
+    width: 40px;
+}
+.start{
+    background-color: white;
+    border-radius: 15px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 30px;
+    -webkit-text-fill-color: orangered;
+    -webkit-text-stroke: 1px black;
+}
+.reStart{
+    background-color: white;
+    border-radius: 15px;
+}
+ .fondo33{
+    background: url("/Imagenes\ Js1/fondo33.jpg") center no-repeat;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 2;
+}  
+.img_fondo {
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+#backgrd {
+    width: 1950px;
+    height: auto;
+}
+.buttom{
+    font-size: 50px;
+}
+/*PARTE PATOS*/
+.buttom{
+    font-size: 500px;
+}
+ 
+.greenContainer {
+ 
+    background-color: green;
+    width: 100vw;
+    height: 30vh;
+}
+ 
+.brownContainer {
+    background-color: brown;
+    width: 100vw;
+    height: 7vh;
+}
+.ultra_mother_container { 
+    background-color: #3F8BA4;
+    width: 100vw;
+    height: 50vh;
+}
+ 
+#wheel {
+    font-weight: bolder;
+ 
+} 
+.pato {
+    top: 10px;
+    position: relative;
+    z-index: 1;
+}
+ 
+.imgPato {
+    position: absolute;
+    z-index: 2;
+}
+ 
+.namePato {
+    position: absolute;
+    z-index: 3;
+    top: 100px;
+    left: 50px;    
+}
+ 
+/* movement of patos */
+ 
+.child_containerMovement1 {
+ 
+    top: 5%;
+    width: 20%;
+    height: auto;      
+    position: relative;
+    animation: myfirst1 4s infinite;
+    animation-direction: alternate;
+}
+ 
+@keyframes myfirst1 {
+    0%   { left: 20px; }
+    25%  { left: 200px;}
+    50%  { left: 300px;}
+    75%  { left: 60px; }
+    100% { left: 100px; }
+}
+ 
+ 
+ 
+.child_containerMovement2 {
+ 
+    top: 5%;
+    width: 20%;
+    height: auto;      
+    position: relative;
+    animation: myfirst2 4s infinite;
+    animation-direction: alternate;
+}
+ 
+@keyframes myfirst2 {
+    0%   { left: 50px; }
+    25%  { left: 100px;}
+    50%  { left: 250px;}
+    75%  { left: 95px; }
+    100% { left: 200px; }
+  }
+ 
+ 
+ 
+ 
+.child_containerMovement3 {
+ 
+    top: 5%;
+    width: 20%;
+    height: auto;      
+    position: relative;
+    animation: myfirst3 4s infinite;
+    animation-direction: alternate;
+}
+ 
+@keyframes myfirst3 {
+    0%   { left: 40px; }
+    25%  { left: 270px;}
+    50%  { left: 120px;}
+    75%  { left: 30px; }
+    100% { left: 100px; }
+}
+ 
+.child_containerMovement4 {
+ 
+    top: 5%;
+    width: 20%;
+    height: auto;      
+    position: relative;
+    animation: myfirst4 4s infinite;
+    animation-direction: alternate;
+}
+ 
+@keyframes myfirst4 {
+    0%   { left: 10px; }
+    25%  { left: 120px;}
+    50%  { left: 205px;}
+    75%  { left: 20px; }
+    100% { left: 300px; }
+}
+ 
+.child_containerMovement5 {
+    top: 5%;
+    width: 20%;
+    height: auto;      
+    position: relative;
+    animation: myfirst5 4s infinite;
+    animation-direction: alternate;
+}
+ 
+@keyframes myfirst5 {
+    0%   { left: 200px; }
+    25%  { left: 150px;}
+    50%  { left: 12px;}
+    75%  { left: 80px; }
+    100% { left: 150px; }
+}
+ 
+.child_containerOut {
+    top: 5%;
+    width: 20%;
+    height: auto;      
+    position: relative;
+    animation: myfirst6 4s 1;
+    animation-direction: alternate;
+}
+ 
+@keyframes myfirst6 {
+    0%   { left: 0; }
+    25%  { left: -150px;}
+    50%  { left: -200px;}
+    75%  { left: -300px; }
+    100% { left: -1000px; }
+}
+ 
+.movePodium {
+ 
+    width: 20%;
+    height: auto;      
+    position: relative;
+    animation: myfirstFinal 50s 1;
+    animation-direction: alternate;
+}
+ 
+@keyframes myfirstFinal {
+    0%   { left: 0; }
+    25%  { left: 45%;}
+    50%  { left: 45%;}
+    75%  { left: 45%; }
+    100% { left: 45%; }
+}
+
