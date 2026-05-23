@@ -24,23 +24,33 @@ const input = document.querySelector("input")
 
 addBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    const text = input.value
+    const text = input.value.trim()
+    const jugadorExiste = jugadores2.some(jugador => jugador.trim().toLowerCase() === text.toLowerCase())
+
+    if (text === "") {
+        alert("Ingresa un nombre para el jugador")
+        return
+    }
+
+    if (jugadorExiste) {
+        alert("Ese nombre ya está en la lista")
+        return
+    }
+
     jugadores2.push(text)
     window.sessionStorage.setItem("items", JSON.stringify(jugadores2));
     console.log(jugadores2)
-    if (text !== "") {
-        const li = document.createElement("li")
-        const p = document.createElement("p")
-        p.textContent = text
+    const li = document.createElement("li")
+    const p = document.createElement("p")
+    p.textContent = text
 
-        li.appendChild(p)
-        li.appendChild(addDeleteBtn())
-        ul.appendChild(li)
+    li.appendChild(p)
+    li.appendChild(addDeleteBtn())
+    ul.appendChild(li)
 
 
-        input.value = "";
-        empty.style.display = "none";
-    }
+    input.value = "";
+    empty.style.display = "none";
 })
 
 function addDeleteBtn() {

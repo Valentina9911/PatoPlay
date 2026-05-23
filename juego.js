@@ -1,8 +1,10 @@
 const btn = document.getElementById("submit")
 let startGame = document.getElementById("start")
-let jugadores = JSON.parse(sessionStorage.getItem("items"));
+let jugadores = JSON.parse(sessionStorage.getItem("items")) || [];
+let winnerMessage = document.getElementById("winnerMessage")
 
 let ganador;
+let ganadorNombre;
 
 var delayInMilliseconds = 10000;
 var delayInMilliseconds2 = 14000;
@@ -15,6 +17,7 @@ function randomIntFromInterval(min, max) {
 
 function quienGana() {
     ganador = randomIntFromInterval(1, jugadores.length)
+    ganadorNombre = jugadores[ganador - 1]
     console.log("El ganador es" + ganador)
     document.getElementById(ganador).className = 'ganador'
 }
@@ -62,8 +65,10 @@ pause.addEventListener ('click', () =>{
 /*xx*/
 startGame.addEventListener("click", () => {
     console.log("Se oprimio el boton start")
+    winnerMessage.textContent = ""
     if (jugadores.length == 0) {
-        alert("Se acabaron los jugadores")
+        winnerMessage.textContent = "No hay jugadores para esta ronda"
+        alert("No hay jugadores para esta ronda")
     }
     else {
 
@@ -119,6 +124,7 @@ startGame.addEventListener("click", () => {
             const stopMoving = document.getElementById("llegueAlFinal")
             stopMoving.className = ""
             winner[0].className = "movePodium"
+            winnerMessage.textContent = "Ganador: " + ganadorNombre
             removePato()
 
         }, delayInMilliseconds3);
