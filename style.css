@@ -22,9 +22,9 @@ body{
 }
 /*sonidos*/
 .sound{
-    background-color: #ff9516;
+    background-color: #e2d4da;
     border-radius: 20px;
-    width: 50vh;
+    width: 10vh;
     height: auto;
     cursor: pointer;
 }

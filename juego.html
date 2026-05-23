@@ -8,72 +8,216 @@
     <title>A Jugar</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="png" href="./Imagenes Js1/gorro.png">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"> -->
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-      </style>
-</head> 
+    </style>
+</head>
 
 <body class="bodyy">
+
     <div class="img_fondo">
-       <!--  <img id="backgrd" src="./Imagenes Js1/fondo33.jpg" alt=""> -->
+        <!-- <img id="backgrd" src="./Imagenes Js1/fondo33.jpg" alt=""> -->
     </div>
+
     <section class="fondo33" id="fondo33">
+
         <img class="logo" src="./Imagenes Js1/LOGO.png">
-        <button id="refresh" class="reset" type="reset"><img src="./Imagenes Js1/restart_alt_FILL0_wght400_GRAD0_opsz48.png"></button>
-        <a href="index.html" class="href"><img src="./Imagenes Js1/home_FILL0_wght400_GRAD0_opsz48.png"></a>
-        <button class="tuerca" id="tuerca"><img src="./Imagenes Js1/settings_FILL0_wght400_GRAD0_opsz48.png"></button>
+
+        <button id="refresh" class="reset" type="reset">
+            <img src="./Imagenes Js1/restart_alt_FILL0_wght400_GRAD0_opsz48.png">
+        </button>
+
+        <a href="index.html" class="href">
+            <img src="./Imagenes Js1/home_FILL0_wght400_GRAD0_opsz48.png">
+        </a>
+
+        <button class="tuerca" id="tuerca">
+            <img src="./Imagenes Js1/settings_FILL0_wght400_GRAD0_opsz48.png">
+        </button>
+
+        <!-- ICONOS DE SONIDO FUERA DE CONFIGURACIÓN -->
+        <button class="sound" id="play">
+            <img src="./Imagenes Js1/volume_up_FILL0_wght400_GRAD0_opsz48.png">
+        </button>
+
+        <button class="sound" id="pause">
+            <img src="./Imagenes Js1/volume_off_FILL0_wght400_GRAD0_opsz48 (1).png">
+        </button>
+
         <div class="inicio">
             <div class="window-notice-hide" id="window-notice">
                 <div class="content">
+
                     <button class="cerrar" id="cerrar">X</button>
+
                     <div class="container">
                         <div class="btn">
-                          <h1>SONIDO</h1>  <button class="sound" id="play"><img src="./Imagenes Js1/volume_up_FILL0_wght400_GRAD0_opsz48.png"></button>
-                        </div>
-                        <div class="btn">
-                          <button class="sound" id="pause"><img src="./Imagenes Js1/volume_off_FILL0_wght400_GRAD0_opsz48 (1).png"></button>
+                            <h1>CONFIGURACIÓN</h1>
                         </div>
                     </div>
-                    </div>
-            </div>
-        </div>
-        <h1>¡ES MOMENTO DE JUGAR!</h1>
-    
-    <!--   <div >
-        <img src="./Imagenes Js1/close_FILL0_wght400_GRAD0_opsz48.png">
-        <img src="./Imagenes Js1/home_FILL0_wght400_GRAD0_opsz48.png">
-        <img src="./Imagenes Js1/settings_FILL0_wght400_GRAD0_opsz48.png">
-        <button class="buttom"> 00:00</button>
-    </div> -->
 
-    <div>
-        <button class="start" id="start">
-           <img class="playing" src="./Imagenes Js1/play_arrow_FILL0_wght400_GRAD0_opsz48.png"> START!
-        </button>
-        <button class="reStart" id="reStart">
-            <img  class="playing" src="./Imagenes Js1/replay_FILL0_wght400_GRAD0_opsz48.png"><a href="./inicio.html">Re-Start</a>
-        </button>
-    </div>
-    <div class="greenContainer">
- 
-    </div>
-    <div class="brownContainer">
- 
-    </div>
- 
-    <div class="ultra_mother_container">
-        <div class="mother_container1">
-            <div class="child_container1" id="pato1">
- 
+                </div>
             </div>
- 
         </div>
-    </div>
- 
-</section>
-<script src="./juego.js"></script>
+
+        <h1>¡ES MOMENTO DE JUGAR!</h1>
+
+        <div>
+            <button class="start" id="start">
+                <img class="playing" src="./Imagenes Js1/play_arrow_FILL0_wght400_GRAD0_opsz48.png"> START!
+            </button>
+
+            <button class="reStart" id="reStart">
+                <img class="playing" src="./Imagenes Js1/replay_FILL0_wght400_GRAD0_opsz48.png">
+                <a href="./inicio.html">Re-Start</a>
+            </button>
+        </div>
+
+        <div class="greenContainer"></div>
+
+        <div class="brownContainer"></div>
+
+        <div class="ultra_mother_container" id="pista">
+            <div class="mother_container1">
+                <div class="child_container1" id="pato1">
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- TU JS ORIGINAL DEL JUEGO. NO SE TOCA -->
+    <script src="./juego.js"></script>
+
+    <!-- VALIDACIÓN EXTRA PARA MOSTRAR EL GANADOR -->
+    <script>
+        let ganadorMostrado = false;
+        let revisionGanador = null;
+        let momentoInicioJuego = 0;
+        let ultimaCantidadDetectada = 0;
+
+        const botonStartGanador = document.getElementById("start");
+        const botonRefreshGanador = document.getElementById("refresh");
+        const botonReStartGanador = document.getElementById("reStart");
+
+        botonStartGanador.addEventListener("click", function () {
+            ganadorMostrado = false;
+            momentoInicioJuego = Date.now();
+            ultimaCantidadDetectada = 0;
+
+            if (revisionGanador !== null) {
+                clearInterval(revisionGanador);
+                revisionGanador = null;
+            }
+
+            revisionGanador = setInterval(function () {
+                revisarGanadorFinal();
+            }, 500);
+        });
+
+        botonRefreshGanador.addEventListener("click", function () {
+            limpiarRevisionGanador();
+        });
+
+        if (botonReStartGanador) {
+            botonReStartGanador.addEventListener("click", function () {
+                limpiarRevisionGanador();
+            });
+        }
+
+        function limpiarRevisionGanador() {
+            ganadorMostrado = false;
+            momentoInicioJuego = 0;
+            ultimaCantidadDetectada = 0;
+
+            if (revisionGanador !== null) {
+                clearInterval(revisionGanador);
+                revisionGanador = null;
+            }
+        }
+
+        function revisarGanadorFinal() {
+            if (ganadorMostrado) {
+                return;
+            }
+
+            const tiempoTranscurrido = Date.now() - momentoInicioJuego;
+
+            if (tiempoTranscurrido < 3000) {
+                return;
+            }
+
+            const posiblesGanadores = obtenerPatosONombresVisibles();
+
+            if (posiblesGanadores.length > ultimaCantidadDetectada) {
+                ultimaCantidadDetectada = posiblesGanadores.length;
+            }
+
+            if (posiblesGanadores.length === 1) {
+                ganadorMostrado = true;
+
+                if (revisionGanador !== null) {
+                    clearInterval(revisionGanador);
+                    revisionGanador = null;
+                }
+
+                const nombreGanador = posiblesGanadores[0];
+
+                setTimeout(function () {
+                    alert("¡¡GANADOR!! 🦆\nEl ganador es: " + nombreGanador);
+                }, 300);
+            }
+        }
+
+        function obtenerPatosONombresVisibles() {
+            const nombres = [];
+
+            const elementos = document.querySelectorAll(
+                ".child_container1, .child_container2, .child_container3, .child_container4, .child_container5, [id^='pato']"
+            );
+
+            elementos.forEach(function (elemento) {
+                const estilo = window.getComputedStyle(elemento);
+
+                const visible =
+                    estilo.display !== "none" &&
+                    estilo.visibility !== "hidden" &&
+                    estilo.opacity !== "0" &&
+                    elemento.offsetParent !== null;
+
+                if (visible) {
+                    const texto = elemento.textContent.trim();
+
+                    if (texto !== "") {
+                        const nombresSeparados = texto
+                            .split(/\n+/)
+                            .map(function (nombre) {
+                                return nombre.trim();
+                            })
+                            .filter(function (nombre) {
+                                return nombre !== "";
+                            });
+
+                        nombresSeparados.forEach(function (nombre) {
+                            nombres.push(nombre);
+                        });
+                    }
+                }
+            });
+
+            const nombresUnicos = [];
+
+            nombres.forEach(function (nombre) {
+                if (!nombresUnicos.includes(nombre)) {
+                    nombresUnicos.push(nombre);
+                }
+            });
+
+            return nombresUnicos;
+        }
+    </script>
+
 </body>
 
 </html>
